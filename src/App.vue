@@ -3,7 +3,11 @@
     <nav>
       <ul>
         <li class="nav-item">
-          <img class="logo" alt="logo image" src="./assets/build-a-bot-logo.png"/>
+          <img
+            class="logo"
+            alt="logo image"
+            src="./assets/build-a-bot-logo.png"
+          />
           Build-a-Bot
         </li>
       </ul>
@@ -12,33 +16,38 @@
 
   <main>
     <RobotBuilder />
+    <!-- <Search /> -->
   </main>
 </template>
 
 <script>
 // import HomePage from './home/HomePage.vue';
 import RobotBuilder from './build/RobotBuilder.vue';
+// import Search from './search/Search.vue';
 
 export default {
   name: 'App',
   components: {
+    // Search,
     RobotBuilder,
   },
 };
 </script>
 
 <style>
-
-body{
+body {
   background: linear-gradient(to bottom, #555, #999);
   background-attachment: fixed;
 }
 
+</style>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
-main{
+main {
   margin: 0 auto;
   padding: 30px;
   background-color: white;
@@ -68,5 +77,4 @@ ul {
   vertical-align: middle;
   height: 30px;
 }
-
 </style>
