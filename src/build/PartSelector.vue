@@ -4,7 +4,7 @@
       alt="robot part image"
       :src="selectedPart.src"
       title="arm"
-      @click="showPartInfo = !showPartInfo"
+      @click="showPartInfoHandler()"
       @keydown="bar"
     />
     <button @click="selectPreviousPart()" class="prev-selector"></button>
@@ -63,6 +63,15 @@ export default {
     this.emitSelectedPart();
   },
   methods: {
+    showPartInfoHandler() {
+      this.$router.push({
+        name: 'Parts',
+        params: {
+          id: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        },
+      });
+    },
     emitSelectedPart() {
       this.$emit('partSelected', this.selectedPart);
     },
@@ -108,6 +117,7 @@ export default {
 }
 .part img {
   width: 165px;
+  cursor: pointer;
 }
 .top {
   border-bottom: none;
